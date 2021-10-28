@@ -1,0 +1,23 @@
+uuid: 6c14a1ee-2d03-4568-8d33-2c9fda5b8947
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_user_mtime
+    - node.type.archival_resource
+  module:
+    - datetime
+_core:
+  default_config_hash: ryJynnsqyCXXEr0q2J0PEU129RY7a3P-E5gp5O4aeR0
+id: node.archival_resource.field_user_mtime
+field_name: field_user_mtime
+entity_type: node
+bundle: archival_resource
+label: 'User Modified Time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

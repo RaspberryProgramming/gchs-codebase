@@ -1,0 +1,30 @@
+uuid: 7020a462-1ec5-4aae-a550-c644472bc7b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_as_resource
+    - node.type.archival_object
+    - node.type.archival_resource
+_core:
+  default_config_hash: 9GUPPEhssDrG6vHxKxeK2jlxFADh5fquRa5-kUVgrTg
+id: node.archival_object.field_as_resource
+field_name: field_as_resource
+entity_type: node
+bundle: archival_object
+label: Resource
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      archival_resource: archival_resource
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

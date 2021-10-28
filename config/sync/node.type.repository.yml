@@ -1,0 +1,23 @@
+uuid: 9b1c90ef-e5e5-4c22-9885-6d8ea9437bab
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - archivesspace
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: wvRkRDErH3WlxLG-hC64j6jpYe_W0RgVb987KRO95M8
+name: Repository
+type: repository
+description: 'A repository holding materials.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

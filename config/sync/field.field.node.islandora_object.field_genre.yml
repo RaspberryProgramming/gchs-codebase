@@ -1,0 +1,29 @@
+uuid: 13d85a32-cc8e-4cab-b918-fa2416d282d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_genre
+    - node.type.islandora_object
+    - taxonomy.vocabulary.tags
+id: node.islandora_object.field_genre
+field_name: field_genre
+entity_type: node
+bundle: islandora_object
+label: Genre
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

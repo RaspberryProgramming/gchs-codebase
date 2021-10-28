@@ -1,0 +1,90 @@
+uuid: 031cb2e9-b80b-4322-a4d3-32382a07364a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.repository.body
+    - field.field.node.repository.field_as_address
+    - field.field.node.repository.field_repository_org_code
+    - field.field.node.repository.field_repository_parent_name
+    - field.field.node.repository.field_repository_short_name
+    - node.type.repository
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: _UpYOS3JLh755zhaXwTADzd8hTfO532yggQdf2-zC5c
+id: node.repository.teaser
+targetEntityType: node
+bundle: repository
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  display_media_entity_view_1:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  display_media_entity_view_2:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  display_media_service_file:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  display_media_thumbnail:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+  openseadragon_media_evas_entity_view_1:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  openseadragon_media_evas_entity_view_2:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  openseadragon_media_evas_service_file:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  pdfjs_media_evas_entity_view_1:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  pdfjs_media_evas_entity_view_2:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  pdfjs_media_evas_service_file:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_as_address: true
+  field_repository_org_code: true
+  field_repository_parent_name: true
+  field_repository_short_name: true
+  langcode: true
+  search_api_excerpt: true

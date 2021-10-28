@@ -1,0 +1,25 @@
+uuid: 079e0a25-7278-47a8-b3b0-6aac51c4e5c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_as_container_type
+    - node.type.archival_top_container
+  module:
+    - options
+_core:
+  default_config_hash: V-G9rk3vD9ZfLItx-4Jhl0TVMPmYLCKEaw7NIzok9TI
+id: node.archival_top_container.field_as_container_type
+field_name: field_as_container_type
+entity_type: node
+bundle: archival_top_container
+label: Type
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: box
+default_value_callback: ''
+settings: {  }
+field_type: list_string

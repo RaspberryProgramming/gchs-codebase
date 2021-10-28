@@ -1,0 +1,25 @@
+uuid: 18f43271-e81e-4832-b71c-c977c32c4c29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.archival_object
+_core:
+  default_config_hash: Wa-Bnb-VjSNgAdsWZ2dNaeADHt13gyAHBuGLRyDXYkY
+id: node.archival_object.field_weight
+field_name: field_weight
+entity_type: node
+bundle: archival_object
+label: Weight
+description: 'Indicates the order of a resource in a collection of resources.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

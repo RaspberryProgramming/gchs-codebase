@@ -1,0 +1,24 @@
+services:
+  archivesspace.batch_update_builder:
+    class: Drupal\archivesspace\BatchUpdateBuilder
+    arguments: ['@logger.channel.archivesspace', '@archivesspace.utils']
+  archivesspace.breadcrumb:
+    class: Drupal\archivesspace\ArchivesSpaceBreadcrumbBuilder
+    arguments: ['@entity_type.manager', '@config.factory']
+    tags:
+      - { name: breadcrumb_builder, priority: 100 }
+  archivesspace.purger:
+    class: Drupal\archivesspace\Purger
+    arguments: ['@logger.channel.archivesspace', '@archivesspace.utils']
+  archivesspace.resource_description_batch_worker:
+    class: Drupal\archivesspace\ResourceDescriptionBatchWorker
+    arguments: ['@logger.channel.archivesspace', '@string_translation', '@entity_type.manager', '@config.factory', '@queue']
+  archivesspace.utils:
+    class: Drupal\archivesspace\ArchivesSpaceUtils
+    arguments: ['@logger.channel.archivesspace', '@string_translation']
+  logger.channel.archivesspace:
+    parent: logger.channel_base
+    arguments: ['archivesspace']
+  Drupal\archivesspace\EventSubscriber\ArchivesSpaceEventSubscriber:
+    tags:
+      - { name: 'event_subscriber'}

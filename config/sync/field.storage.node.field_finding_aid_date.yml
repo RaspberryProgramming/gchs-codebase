@@ -1,0 +1,23 @@
+uuid: 8dce3285-102d-4c06-8a14-1c2a3c71ca4e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: _eBUuch5Lg-tARWDScoUXH9tQMXLt1h0CfRyelzczNs
+id: node.field_finding_aid_date
+field_name: field_finding_aid_date
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

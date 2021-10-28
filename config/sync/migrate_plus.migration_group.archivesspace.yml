@@ -1,0 +1,12 @@
+uuid: b367398e-acce-4ae5-a9c5-a4622659557d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: IiDyChIHwU24v0jaFZOCPLfPLACx9uhBcuIqzRLHnxQ
+id: archivesspace
+label: archivesspace
+description: ''
+source_type: null
+module: null
+shared_configuration: null

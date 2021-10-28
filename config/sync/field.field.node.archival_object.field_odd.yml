@@ -1,0 +1,23 @@
+uuid: 7fef296a-4948-4cfc-9b49-c3c1471e2d7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_odd
+    - node.type.archival_object
+  module:
+    - text
+_core:
+  default_config_hash: ED0jX90TbFP153zz46ThWl1_QBYkjOGtZpUfwvH8Vf4
+id: node.archival_object.field_odd
+field_name: field_odd
+entity_type: node
+bundle: archival_object
+label: General
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

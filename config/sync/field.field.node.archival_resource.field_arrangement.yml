@@ -1,0 +1,23 @@
+uuid: 443206ed-de57-4177-bce3-0b8c1e382128
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_arrangement
+    - node.type.archival_resource
+  module:
+    - text
+_core:
+  default_config_hash: wFGvOoFI7BK0V_4hqpN19tYzGW95Ma5ZqjuOuKxCFtI
+id: node.archival_resource.field_arrangement
+field_name: field_arrangement
+entity_type: node
+bundle: archival_resource
+label: Arrangement
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

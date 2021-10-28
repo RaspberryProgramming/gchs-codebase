@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.archival_container_list
+  module:
+    - node
+    - views
+  theme:
+    - carapace
+id: views_block__archival_container_list_block_1_carapace
+theme: carapace
+region: content
+weight: 10
+provider: null
+plugin: 'views_block:archival_container_list-block_1'
+settings:
+  id: 'views_block:archival_container_list-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      archival_top_container: archival_top_container
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

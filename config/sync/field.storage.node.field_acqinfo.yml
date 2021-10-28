@@ -1,0 +1,21 @@
+uuid: 8d1c724c-fa3e-4f5e-bfb8-fcfc1827abcf
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: VD0OjMr9SXvDB_O3z2LgGViWBc-3WZbyqXNmQ9j1GEQ
+id: node.field_acqinfo
+field_name: field_acqinfo
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

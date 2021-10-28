@@ -1,0 +1,23 @@
+uuid: c03a99e4-43c7-468c-8130-12edda0cbb4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bioghist
+    - node.type.archival_resource
+  module:
+    - text
+_core:
+  default_config_hash: y8pRUDBHKFvQ8mv6GpYuMIqcSsdFX_x2NhvUDJ_7wM8
+id: node.archival_resource.field_bioghist
+field_name: field_bioghist
+entity_type: node
+bundle: archival_resource
+label: 'Biographical / Historical'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

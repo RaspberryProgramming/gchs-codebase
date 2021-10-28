@@ -1,0 +1,21 @@
+uuid: 2af1d96e-8d69-4117-84da-fac0a3ec8c3b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: sbRobvi-ZmQN5RtSz-Pfi8gIzysob3r_9OPNAgPtwBk
+id: node.field_phystech
+field_name: field_phystech
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

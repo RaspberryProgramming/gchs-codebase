@@ -1,0 +1,23 @@
+uuid: 95e6d3d3-3ad1-4eee-9cbe-ab350a0d718d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legalstatus
+    - node.type.archival_object
+  module:
+    - text
+_core:
+  default_config_hash: DR0fYLuegd1ugwEeejzmogmg11Af6R_-I2H7wymakz4
+id: node.archival_object.field_legalstatus
+field_name: field_legalstatus
+entity_type: node
+bundle: archival_object
+label: 'Legal Status'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

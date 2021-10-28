@@ -1,0 +1,94 @@
+langcode: en
+status: true
+dependencies: {  }
+id: as_subjects
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: archivesspace_subjects
+label: 'ArchivesSpace Subjects'
+source:
+  plugin: archivesspace
+  object_type: subjects
+  base_uri: 'http://localhost:8089'
+  username: admin
+  password: admin
+  keys:
+    - uri
+process:
+  vid:
+    -
+      plugin: extract
+      source: terms
+      default: topical
+      index:
+        - 0
+        - term_type
+    -
+      plugin: static_map
+      map:
+        geographic: geo_location
+      default_value: subject
+  sub_tid:
+    -
+      plugin: skip_on_empty
+      source: authority_id
+      method: process
+    -
+      plugin: entity_lookup
+      value_key: field_authority_link
+      bundle_key: vid
+      bundle: subject
+      entity_type: taxonomy_term
+      ignore_case: true
+  geo_tid:
+    -
+      plugin: skip_on_empty
+      source: authority_id
+      method: process
+    -
+      plugin: entity_lookup
+      value_key: field_authority_link
+      bundle_key: vid
+      bundle: geo_location
+      entity_type: taxonomy_term
+      ignore_case: true
+  tid:
+    -
+      plugin: get
+      source:
+        - '@sub_tid'
+        - '@geo_tid'
+    -
+      plugin: callback
+      callable: array_filter
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: array_shift
+  name: title
+  uid:
+    plugin: default_value
+    default_value: 1
+  field_subject_authorities/uri:
+    -
+      plugin: callback
+      callable: trim
+      source: authority_id
+    -
+      plugin: skip_on_regex
+      not_equals: true
+      value: '|^https?://|'
+      method: process
+  field_subject_authorities/source:
+    plugin: skip_on_empty
+    method: process
+    source: source
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: subject
+  overwrite_properties:
+    - name
+migration_dependencies: null

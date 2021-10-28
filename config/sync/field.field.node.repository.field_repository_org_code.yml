@@ -1,0 +1,21 @@
+uuid: bb826f0c-b9c6-436b-ba3b-6b89030a4141
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_repository_org_code
+    - node.type.repository
+_core:
+  default_config_hash: tpSoI5D4JYX9W-dGvlOne74Rvik4WHVEp21MljbNFYs
+id: node.repository.field_repository_org_code
+field_name: field_repository_org_code
+entity_type: node
+bundle: repository
+label: 'Organization / Agency Code'
+description: 'ISO 15511 code for the repository.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

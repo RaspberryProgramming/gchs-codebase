@@ -1,0 +1,23 @@
+uuid: 76a65eeb-0ade-4d4b-b136-92a57ec7e2bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archival_record_level
+    - node.type.archival_resource
+  module:
+    - options
+_core:
+  default_config_hash: IL2zntRS60UZrsk11OmuVQMiUqMIAU6TYfGaibnfLh8
+id: node.archival_resource.field_archival_record_level
+field_name: field_archival_record_level
+entity_type: node
+bundle: archival_resource
+label: 'Level of Description'
+description: 'Hierarchical level of description'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

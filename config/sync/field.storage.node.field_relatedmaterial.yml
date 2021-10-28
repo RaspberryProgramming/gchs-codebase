@@ -1,0 +1,21 @@
+uuid: 1a5bb5e3-a6bb-4002-a809-f85d3d5d61e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: tUgOpBGBxk_Yym1OgxZm77VCn29aU8_lC3WD3mdNDxo
+id: node.field_relatedmaterial
+field_name: field_relatedmaterial
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

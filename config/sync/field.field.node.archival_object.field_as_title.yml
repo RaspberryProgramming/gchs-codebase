@@ -1,0 +1,23 @@
+uuid: 1e36e81d-418e-42bb-8220-14f57198dcc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_as_title
+    - node.type.archival_object
+  module:
+    - text
+_core:
+  default_config_hash: aQGKZTi6dKochEm95evYfYNLOsPYLe56JUyGMDXekVs
+id: node.archival_object.field_as_title
+field_name: field_as_title
+entity_type: node
+bundle: archival_object
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

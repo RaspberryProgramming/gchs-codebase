@@ -1,0 +1,23 @@
+uuid: 960ae5bb-c081-4230-96ce-c0e93f030eda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dimensions
+    - node.type.archival_object
+  module:
+    - text
+_core:
+  default_config_hash: Cus-OH-UEpQ3skknW6As8uLPV1cMFQjt-gkPtLWb2VI
+id: node.archival_object.field_dimensions
+field_name: field_dimensions
+entity_type: node
+bundle: archival_object
+label: Dimensions
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

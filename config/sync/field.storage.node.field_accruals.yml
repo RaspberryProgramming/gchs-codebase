@@ -1,0 +1,21 @@
+uuid: c109e0fb-a56d-48ed-8d6b-20bba39c0840
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: EnLlcDTjEM5snhHjaPaJ3foi4sjXZAfYtpHy7ttSWlw
+id: node.field_accruals
+field_name: field_accruals
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

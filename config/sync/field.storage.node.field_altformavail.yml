@@ -1,0 +1,21 @@
+uuid: 8e752d41-36ac-4d8b-a677-689da2e058f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: Q4x-_4OhNbysgnQZqmJWntnm7MtZVXrrukz6T0HYm_U
+id: node.field_altformavail
+field_name: field_altformavail
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

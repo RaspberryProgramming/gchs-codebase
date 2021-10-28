@@ -1,0 +1,21 @@
+uuid: e48b5b95-c5c6-4883-ad76-d7916da26e85
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: t497WKCuEMxNIkJT46xh-9lVvEc37LkVGau2rfCQb0U
+id: node.field_otherfindaid
+field_name: field_otherfindaid
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

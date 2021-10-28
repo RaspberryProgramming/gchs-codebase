@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - archivesspace
+id: update_archival_resource_pdf
+label: 'Update Archival Resource PDF'
+type: node
+plugin: update_as_resource_description_file
+configuration:
+  filesystem: 'public://'
+  path: finding-aids
+  filename_pattern: '[node:title]'
+  file_type: pdf
+  resource_description_field: field_printable_pdf
+  media_document_type: document

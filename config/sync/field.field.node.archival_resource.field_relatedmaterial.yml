@@ -1,0 +1,23 @@
+uuid: 00d4ab75-a840-44eb-92c5-07b4daea2f2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_relatedmaterial
+    - node.type.archival_resource
+  module:
+    - text
+_core:
+  default_config_hash: LT6RTWA6zwDUXbuHcv3Z74_UIPLEh6XgDuYbi_3KZHk
+id: node.archival_resource.field_relatedmaterial
+field_name: field_relatedmaterial
+entity_type: node
+bundle: archival_resource
+label: 'Related Materials'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

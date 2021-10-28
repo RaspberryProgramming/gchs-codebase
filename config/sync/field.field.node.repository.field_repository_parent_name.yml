@@ -1,0 +1,21 @@
+uuid: 3620a129-c1d0-44af-b7df-7cc6f5308b2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_repository_parent_name
+    - node.type.repository
+_core:
+  default_config_hash: Rvj1HhaSp_C3ZPnDbBMDhd3FdjCvnK2qCcUN5NYNHz8
+id: node.repository.field_repository_parent_name
+field_name: field_repository_parent_name
+entity_type: node
+bundle: repository
+label: 'Parent Institution Name'
+description: 'The name of the organization the repository is a part of.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,35 @@
+uuid: 9e60470e-d69f-4527-8f63-839882ad8c2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.repository
+  module:
+    - node
+_core:
+  default_config_hash: S-a7elh_d5y6UJGSlLZUyxfGGOUKtZQjMRodsgdWPw8
+id: node.repository
+targetEntityType: node
+bundle: repository
+types:
+  - 'schema:ArchiveOrganization'
+fieldMappings:
+  title:
+    properties:
+      - 'schema:name'
+  created:
+    properties:
+      - 'schema:dateCreated'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
+  changed:
+    properties:
+      - 'schema:dateModified'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
+  body:
+    properties:
+      - 'schema:description'
+  field_as_address:
+    properties:
+      - 'schema:address'

@@ -1,0 +1,21 @@
+uuid: 945c4eeb-a5e2-42b2-a47a-8714f117310a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: vwKMcmbTYZupdGGA_eqrUcPZ97T_MjikNXrfnNv6FhI
+id: node.field_custodhist
+field_name: field_custodhist
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

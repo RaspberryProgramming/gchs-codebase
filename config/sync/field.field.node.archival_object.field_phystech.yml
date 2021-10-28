@@ -1,0 +1,23 @@
+uuid: b3c2fbf2-e764-41f9-9b98-6c713ec944b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phystech
+    - node.type.archival_object
+  module:
+    - text
+_core:
+  default_config_hash: qCQw9_xsd1Hz2abxKDmQg3ztcx8UdxLdk4OdTF9YLv0
+id: node.archival_object.field_phystech
+field_name: field_phystech
+entity_type: node
+bundle: archival_object
+label: 'Physical Characteristics and Technical Requirements'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

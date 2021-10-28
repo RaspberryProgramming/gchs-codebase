@@ -1,0 +1,31 @@
+{
+  "name": "drupal/archivesspace",
+  "type": "drupal-module",
+  "description": "Provides integration between Drupal and ArchivesSpace",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://www.drupal.org/project/archivesspace",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/archivesspace",
+    "source": "http://cgit.drupalcode.org/archivesspace"
+  },
+  "require": {
+      "drupal/address": "^1.8",
+      "drupal/field_group": "^3.1",
+      "drupal/migrate_plus": "^5.0",
+      "drupal/title_length": "^1.1",
+      "drupal/weight": "^3.2",
+      "islandora/controlled_access_terms": "^1.1 || ^2"
+  },
+  "extra": {
+    "drush": {
+      "services": {
+        "drush.services.yml": "^9"
+      }
+    }
+  },
+  "suggest": {
+    "drupal/html_title": "Allows emphasis tags in display titles to be formatted properly."
+  }
+}

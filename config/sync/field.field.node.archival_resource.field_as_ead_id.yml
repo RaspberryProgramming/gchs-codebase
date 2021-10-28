@@ -1,0 +1,21 @@
+uuid: 2dc353ca-308d-4857-ac0c-15675beab8d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_as_ead_id
+    - node.type.archival_resource
+_core:
+  default_config_hash: akMPTYDTU7-3b8ubuNYekiZneuSsfVN-jkgsY5qmZ_w
+id: node.archival_resource.field_as_ead_id
+field_name: field_as_ead_id
+entity_type: node
+bundle: archival_resource
+label: 'EAD ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

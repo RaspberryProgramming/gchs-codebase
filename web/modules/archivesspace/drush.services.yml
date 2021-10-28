@@ -1,0 +1,16 @@
+services:
+  archivesspace.update-command:
+    class: \Drupal\archivesspace\Commands\ArchivesSpaceBatchUpdateCommand
+    tags:
+      - { name: drush.command }
+    arguments: ['@logger.channel.archivesspace','@archivesspace.batch_update_builder']
+  archivessapce.purge-command:
+    class: \Drupal\archivesspace\Commands\ArchivesspacePurgeDeletedCommand
+    tags:
+      - { name: drush.command }
+    arguments: ['@logger.channel.archivesspace','@archivesspace.purger']
+  archivesspace.resource-description-queue:
+    class: \Drupal\archivesspace\Commands\ArchivesSpaceResourceDescriptionQueueCommand
+    tags:
+      - { name: drush.command }
+    arguments: ['@logger.channel.archivesspace','@archivesspace.resource_description_batch_worker']

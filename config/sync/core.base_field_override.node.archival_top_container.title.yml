@@ -1,0 +1,20 @@
+uuid: 794c7d8d-85bc-4839-8b66-2399a865ae66
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.archival_top_container
+_core:
+  default_config_hash: WTCNEIxP5KiUZQTPAbWqnBeTjIlfDQ04P2LkPtXt8tY
+id: node.archival_top_container.title
+field_name: title
+entity_type: node
+bundle: archival_top_container
+label: Label
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: b7ebcf80-24f5-42f1-9298-c1b6cb46e76c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_altformavail
+    - node.type.archival_resource
+  module:
+    - text
+_core:
+  default_config_hash: OMwGil2o1lOoWQ9tlXA-2o7lKEn3CpYVEUXCO0nPwRg
+id: node.archival_resource.field_altformavail
+field_name: field_altformavail
+entity_type: node
+bundle: archival_resource
+label: 'Existence and Location of Copies'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

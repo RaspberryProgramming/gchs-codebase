@@ -1,0 +1,24 @@
+uuid: 590ae97f-77ee-4297-9d23-1dd489cf2eb8
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - archivesspace
+  module:
+    - archivesspace
+    - node
+_core:
+  default_config_hash: 2-e-jrTWd7QSshKEtBqPYt2qrDLi0wq3ughC5MgZUpo
+id: node.field_as_extent
+field_name: field_as_extent
+entity_type: node
+type: as_extent
+settings: {  }
+module: archivesspace
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

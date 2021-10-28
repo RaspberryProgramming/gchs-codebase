@@ -1,0 +1,334 @@
+langcode: en
+status: true
+dependencies: {  }
+id: as_archival_objects
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: archivesspace
+label: 'ArchivesSpace Archival Objects'
+source:
+  plugin: archivesspace
+  object_type: archival_objects
+  base_uri: 'http://localhost:8089'
+  repository: /repositories/2
+  username: admin
+  password: admin
+  keys:
+    - uri
+process:
+  unpublished_ancestor:
+    plugin: skip_on_value
+    source: has_unpublished_ancestor
+    method: row
+    value: true
+  published:
+    plugin: skip_on_value
+    source: publish
+    method: row
+    value: false
+  type:
+    plugin: default_value
+    default_value: archival_object
+  title:
+    -
+      plugin: str_replace
+      source: display_string
+      regex: true
+      search: '#<(/)?emph#'
+      replace: '<\1em'
+    -
+      plugin: callback
+      callable: trim
+  uid:
+    plugin: default_value
+    default_value: 1
+  field_archival_record_level: level
+  field_as_date:
+    plugin: sub_process
+    source: dates
+    process:
+      label: label
+      begin: begin
+      end: end
+      date_type: date_type
+      certainty: certainty
+      expression: expression
+      calendar: calendar
+  field_as_extent:
+    -
+      plugin: skip_on_empty
+      source: extents
+      method: process
+    -
+      plugin: sub_process
+      process:
+        portion: portion
+        number: number
+        extent_type: extent_type
+        container_summary: container_summary
+        physical_details: physical_details
+        dimensions: dimensions
+  field_as_resource:
+    -
+      plugin: extract
+      source: resource
+      index:
+        - ref
+    -
+      plugin: migration_lookup
+      migration:
+        - as_resources
+  field_member_of:
+    -
+      plugin: get
+      source:
+        - parent
+        - resource
+    -
+      plugin: callback
+      callable: array_filter
+    -
+      plugin: callback
+      callable: current
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: extract
+      index:
+        - ref
+    -
+      plugin: migration_lookup
+      migration:
+        - as_archival_objects
+        - as_resources
+  field_as_ref_id: ref_id
+  field_abstract:
+    plugin: archivesspace_notes
+    type: abstract
+    source: notes
+  field_accessrestrict:
+    plugin: archivesspace_notes
+    type: accessrestrict
+    source: notes
+  field_accruals:
+    plugin: archivesspace_notes
+    type: accruals
+    source: notes
+  field_acqinfo:
+    plugin: archivesspace_notes
+    type: acqinfo
+    source: notes
+  field_altformavail:
+    plugin: archivesspace_notes
+    type: altformavail
+    source: notes
+  field_appraisal:
+    plugin: archivesspace_notes
+    type: appraisal
+    source: notes
+  field_arrangement:
+    plugin: archivesspace_notes
+    type: arrangement
+    source: notes
+  field_bioghist:
+    plugin: archivesspace_notes
+    type: bioghist
+    source: notes
+  field_custodhist:
+    plugin: archivesspace_notes
+    type: custodhist
+    source: notes
+  field_dimensions:
+    plugin: archivesspace_notes
+    type: dimensions
+    source: notes
+  field_external_documents:
+    plugin: external_document_link
+    source: external_documents
+  field_fileplan:
+    plugin: archivesspace_notes
+    type: fileplan
+    source: notes
+  field_langmaterial:
+    plugin: archivesspace_notes
+    type: langmaterial
+    source: notes
+  field_legalstatus:
+    plugin: archivesspace_notes
+    type: legalstatus
+    source: notes
+  field_materialspec:
+    plugin: archivesspace_notes
+    type: materialspec
+    source: notes
+  field_odd:
+    plugin: archivesspace_notes
+    type: odd
+    source: notes
+  field_originalsloc:
+    plugin: archivesspace_notes
+    type: originalsloc
+    source: notes
+  field_otherfindaid:
+    plugin: archivesspace_notes
+    type: otherfindaid
+    source: notes
+  field_physdesc:
+    plugin: archivesspace_notes
+    type: physdesc
+    source: notes
+  field_physfacet:
+    plugin: archivesspace_notes
+    type: physfacet
+    source: notes
+  field_physloc:
+    plugin: archivesspace_notes
+    type: physloc
+    source: notes
+  field_phystech:
+    plugin: archivesspace_notes
+    type: phystech
+    source: notes
+  field_prefercite:
+    plugin: archivesspace_notes
+    type: prefercite
+    source: notes
+  field_processinfo:
+    plugin: archivesspace_notes
+    type: processinfo
+    source: notes
+  field_relatedmaterial:
+    plugin: archivesspace_notes
+    type: relatedmaterial
+    source: notes
+  field_scopecontent:
+    plugin: archivesspace_notes
+    type: scopecontent
+    source: notes
+  field_separatedmaterial:
+    plugin: archivesspace_notes
+    type: separatedmaterial
+    source: notes
+  field_userestrict:
+    plugin: archivesspace_notes
+    type: userestrict
+    source: notes
+  'field_as_title/format':
+    plugin: default_value
+    default_value: 'basic_html'
+  'field_as_title/value':
+    -
+      plugin: str_replace
+      source: title
+      regex: true
+      search: '#<(/)?emph#'
+      replace: '<\1em'
+    -
+      plugin: callback
+      callable: trim
+  field_weight: position
+  field_resource_identifier: component_id
+  field_resource_resource_type: level
+  field_restrictions_bool: restrictions
+  field_linked_agent:
+    plugin: sub_process_ext
+    source: linked_agents
+    process:
+      _relators_prefix:
+        plugin: default_value
+        default_value: 'relators'
+      role:
+        plugin: skip_on_value
+        method: row
+        source: role
+        value: subject
+      rel_type:
+        -
+          plugin: concat
+          delimiter: ':'
+          source:
+            - '@_relators_prefix'
+            - relator
+        -
+          plugin: static_map
+          bypass: true
+          map:
+            'relators:': 'relators:cre'
+      target_id:
+        plugin: migration_lookup
+        migration:
+          - as_agents_corp
+          - as_agents_family
+          - as_agents_people
+        source: ref
+  temp_subjects_agents:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: linked_agents
+    -
+      plugin: sub_process_ext
+      process:
+        role:
+          plugin: skip_on_value
+          not_equals: true
+          method: row
+          source: role
+          value: subject
+        ref: ref
+    -
+      plugin: flatten_to_keys
+      key: ref
+    -
+      plugin: migration_lookup
+      migration:
+        - as_agents_corp
+        - as_agents_family
+        - as_agents_people
+  temp_subjects:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: subjects
+    -
+      plugin: flatten_to_keys
+      key: ref
+    -
+      plugin: migration_lookup
+      migration:
+        - as_subjects_all
+        - as_subjects_geo
+  field_subject:
+    -
+      plugin: get
+      source:
+        - '@temp_subjects_agents'
+        - '@temp_subjects'
+    -
+      plugin: flatten
+  field_archival_container:
+    plugin: archivesspace_instances
+    source: instances
+    migration:
+      - as_top_containers
+  field_user_mtime:
+    plugin: skip_on_empty
+    method: process
+    source: user_mtime
+destination:
+  plugin: 'entity:node'
+  bundle: archival_object
+migration_dependencies:
+  required:
+    - as_repositories
+    - as_resources
+    - as_agents_corp
+    - as_agents_family
+    - as_agents_people
+    - as_subjects_all
+    - as_subjects_geo
+  optional:
+    - as_top_containers

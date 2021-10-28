@@ -1,0 +1,122 @@
+uuid: 573c3062-103e-41d8-88de-ebe2d232eed1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.archival_object.field_abstract
+    - field.field.node.archival_object.field_accessrestrict
+    - field.field.node.archival_object.field_accruals
+    - field.field.node.archival_object.field_acqinfo
+    - field.field.node.archival_object.field_altformavail
+    - field.field.node.archival_object.field_appraisal
+    - field.field.node.archival_object.field_archival_container
+    - field.field.node.archival_object.field_archival_record_level
+    - field.field.node.archival_object.field_arrangement
+    - field.field.node.archival_object.field_as_date
+    - field.field.node.archival_object.field_as_extent
+    - field.field.node.archival_object.field_as_ref_id
+    - field.field.node.archival_object.field_as_resource
+    - field.field.node.archival_object.field_as_title
+    - field.field.node.archival_object.field_bioghist
+    - field.field.node.archival_object.field_custodhist
+    - field.field.node.archival_object.field_dimensions
+    - field.field.node.archival_object.field_external_documents
+    - field.field.node.archival_object.field_fileplan
+    - field.field.node.archival_object.field_langmaterial
+    - field.field.node.archival_object.field_legalstatus
+    - field.field.node.archival_object.field_linked_agent
+    - field.field.node.archival_object.field_materialspec
+    - field.field.node.archival_object.field_member_of
+    - field.field.node.archival_object.field_odd
+    - field.field.node.archival_object.field_originalsloc
+    - field.field.node.archival_object.field_otherfindaid
+    - field.field.node.archival_object.field_physdesc
+    - field.field.node.archival_object.field_physfacet
+    - field.field.node.archival_object.field_physloc
+    - field.field.node.archival_object.field_phystech
+    - field.field.node.archival_object.field_prefercite
+    - field.field.node.archival_object.field_processinfo
+    - field.field.node.archival_object.field_relatedmaterial
+    - field.field.node.archival_object.field_resource_identifier
+    - field.field.node.archival_object.field_restrictions_bool
+    - field.field.node.archival_object.field_scopecontent
+    - field.field.node.archival_object.field_separatedmaterial
+    - field.field.node.archival_object.field_subject
+    - field.field.node.archival_object.field_user_mtime
+    - field.field.node.archival_object.field_userestrict
+    - field.field.node.archival_object.field_weight
+    - node.type.archival_object
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: XejiDZWRPIdJZQK9IjpucypgniZl8qvpfPlvO5iQOSA
+id: node.archival_object.teaser
+targetEntityType: node
+bundle: archival_object
+mode: teaser
+content:
+  field_abstract:
+    type: text_default
+    weight: 0
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  archival_container_list_eva_entity_view_1: true
+  display_media_entity_view_1: true
+  display_media_entity_view_2: true
+  display_media_service_file: true
+  display_media_thumbnail: true
+  field_accessrestrict: true
+  field_accruals: true
+  field_acqinfo: true
+  field_altformavail: true
+  field_appraisal: true
+  field_archival_container: true
+  field_archival_record_level: true
+  field_arrangement: true
+  field_as_date: true
+  field_as_extent: true
+  field_as_ref_id: true
+  field_as_resource: true
+  field_as_title: true
+  field_bioghist: true
+  field_custodhist: true
+  field_dimensions: true
+  field_external_documents: true
+  field_fileplan: true
+  field_langmaterial: true
+  field_legalstatus: true
+  field_linked_agent: true
+  field_materialspec: true
+  field_member_of: true
+  field_odd: true
+  field_originalsloc: true
+  field_otherfindaid: true
+  field_physdesc: true
+  field_physfacet: true
+  field_physloc: true
+  field_phystech: true
+  field_prefercite: true
+  field_processinfo: true
+  field_relatedmaterial: true
+  field_resource_identifier: true
+  field_restrictions_bool: true
+  field_scopecontent: true
+  field_separatedmaterial: true
+  field_subject: true
+  field_user_mtime: true
+  field_userestrict: true
+  field_weight: true
+  langcode: true
+  links: true
+  openseadragon_media_evas_entity_view_1: true
+  openseadragon_media_evas_entity_view_2: true
+  openseadragon_media_evas_service_file: true
+  pdfjs_media_evas_entity_view_1: true
+  pdfjs_media_evas_entity_view_2: true
+  pdfjs_media_evas_service_file: true
+  search_api_excerpt: true

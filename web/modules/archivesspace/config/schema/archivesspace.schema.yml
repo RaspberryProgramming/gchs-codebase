@@ -1,0 +1,58 @@
+archivesspace.settings:
+  type: config_object
+  label: 'ArchivesSpace config'
+  mapping:
+    batch_update:
+      type: mapping
+      mapping:
+        max_pages_default:
+          type: integer
+          label: 'Max Pages'
+        uri_migration_map:
+          type: sequence
+          sequence:
+            type: mapping
+            mapping:
+              uri_regex:
+                type: string
+                label: 'URI Regex Pattern'
+              migration_id:
+                type: string
+                label: 'Migration ID'
+    breadcrumb:
+      type: mapping
+      mapping:
+        content_types:
+          type: sequence
+          label: 'Content Types'
+          sequence:
+            - type: string
+        parent_field:
+          type: string
+    resource_description_files:
+      type: mapping
+      mapping:
+        pdf_generate_action:
+          type: string
+          label: 'Action to Generate PDF Resource Description File'
+        xml_generate_action:
+          type: string
+          label: 'Action to Generate XML Resource Description File'
+        enabled_types:
+          type: sequence
+          label: 'Enabled Types'
+          sequence:
+            - type: string
+    resource_description_queue_enabled:
+      type: boolean
+      label: 'Resource Description Queue Enabled'
+
+field.field_settings.as_extent:
+  type: mapping
+  label: 'Default AS Extent widget settings'
+  mapping:
+    extent_types:
+      type: sequence
+      label: 'Extent Types'
+      sequence:
+        - type: string

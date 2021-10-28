@@ -1,0 +1,25 @@
+uuid: 3741cfce-42c4-4aae-b36c-20cef2e50130
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.repository
+  module:
+    - text
+_core:
+  default_config_hash: MPXcJOZYCbWMhWK58WVfwnzl2sq8_D93eDpfCzCEhPA
+id: node.repository.body
+field_name: body
+entity_type: node
+bundle: repository
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

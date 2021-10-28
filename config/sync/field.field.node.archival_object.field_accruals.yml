@@ -1,0 +1,23 @@
+uuid: b8cae3af-4163-49a8-8ed3-3267a51e0155
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_accruals
+    - node.type.archival_object
+  module:
+    - text
+_core:
+  default_config_hash: Evlpz8ovFaUsn2EIhokvF-h8sBtHksbVTWbD0aLQXBQ
+id: node.archival_object.field_accruals
+field_name: field_accruals
+entity_type: node
+bundle: archival_object
+label: Accruals
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

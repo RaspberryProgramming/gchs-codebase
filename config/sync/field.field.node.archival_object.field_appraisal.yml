@@ -1,0 +1,23 @@
+uuid: 6066e7b7-6c4b-4dee-9011-c4d27ec54714
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_appraisal
+    - node.type.archival_object
+  module:
+    - text
+_core:
+  default_config_hash: WWzK5h4YbfjtFV_PlWryG6EeA9TZv_Z_fMAAHEex3Fw
+id: node.archival_object.field_appraisal
+field_name: field_appraisal
+entity_type: node
+bundle: archival_object
+label: Appraisal
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

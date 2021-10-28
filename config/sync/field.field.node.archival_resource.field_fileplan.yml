@@ -1,0 +1,23 @@
+uuid: c98eacb7-c6c4-4cd4-87d4-e7e9598eb048
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fileplan
+    - node.type.archival_resource
+  module:
+    - text
+_core:
+  default_config_hash: Y8do-Z1XxVXGPtzEeRP4UbLmC5KiZF9C1EiTRczgMxw
+id: node.archival_resource.field_fileplan
+field_name: field_fileplan
+entity_type: node
+bundle: archival_resource
+label: 'File Plan'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

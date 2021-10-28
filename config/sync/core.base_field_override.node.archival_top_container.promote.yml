@@ -1,0 +1,24 @@
+uuid: affb8011-2002-4868-ad2d-c534bb63f447
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.archival_top_container
+_core:
+  default_config_hash: LHnM-ArfBTKETgMkSaTk2IQAPWRbo-DDLIq3paVAuo4
+id: node.archival_top_container.promote
+field_name: promote
+entity_type: node
+bundle: archival_top_container
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

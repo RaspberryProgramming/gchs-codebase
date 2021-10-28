@@ -1,0 +1,35 @@
+uuid: df08b52b-7827-454b-ab20-d539d0a0c3fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_creator
+    - taxonomy.vocabulary.corporate_body
+    - taxonomy.vocabulary.family
+    - taxonomy.vocabulary.person
+    - taxonomy.vocabulary.records_classifications
+_core:
+  default_config_hash: BZfEmE3DVW-NMbmVWA0KnipYZrQXbw47CN9q3gtk-p4
+id: taxonomy_term.records_classifications.field_creator
+field_name: field_creator
+entity_type: taxonomy_term
+bundle: records_classifications
+label: Creator
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      corporate_body: corporate_body
+      family: family
+      person: person
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: corporate_body
+field_type: entity_reference

@@ -1,0 +1,21 @@
+uuid: 7d416614-ee51-417c-bc19-13e804fe20e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_finding_aid_date
+    - node.type.archival_resource
+_core:
+  default_config_hash: s9iTk5CmVHtliEvakiBUY9H5wa7gr0EGX969GTZgr-c
+id: node.archival_resource.field_finding_aid_date
+field_name: field_finding_aid_date
+entity_type: node
+bundle: archival_resource
+label: 'Finding Aid Date'
+description: 'Date expression for when the finding aid was created or published.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,92 @@
+uuid: c3d79329-bd5e-47de-91a4-298541586604
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: '-ERp-WSbaypb9KCB5Hc1jaFzQyCO_zGGqfUC5U3fuh0'
+id: as_agents_corp
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: archivesspace_agents
+label: 'ArchivesSpace Agents Corporate Bodies'
+source:
+  plugin: archivesspace
+  object_type: agents/corporate_entities
+  base_uri: 'http://localhost:8089'
+  username: admin
+  password: admin
+  keys:
+    - uri
+process:
+  published:
+    plugin: skip_on_value
+    source: publish
+    method: row
+    value: false
+  tid:
+    -
+      plugin: skip_on_empty
+      source: display_name/authority_id
+      method: process
+    -
+      plugin: entity_lookup
+      source: display_name/authority_id
+      value_key: field_authority_link
+      bundle_key: vid
+      bundle: corporate_body
+      entity_type: taxonomy_term
+      ignore_case: true
+  name: title
+  uid:
+    plugin: default_value
+    default_value: 1
+  description:
+    plugin: archivesspace_notes
+    source: notes
+  field_cat_date_begin:
+    -
+      plugin: extract
+      source: dates_of_existence
+      default: ''
+      index:
+        - 0
+        - begin
+    -
+      plugin: skip_on_empty
+      method: process
+  field_cat_date_end:
+    -
+      plugin: extract
+      source: dates_of_existence
+      default: ''
+      index:
+        - 0
+        - end
+    -
+      plugin: skip_on_empty
+      method: process
+  field_authority_link/uri:
+    -
+      plugin: callback
+      callable: trim
+      source: display_name/authority_id
+    -
+      plugin: skip_on_regex
+      not_equals: true
+      value: '|^https?://|'
+      method: process
+  field_authority_link/source:
+    plugin: skip_on_empty
+    method: process
+    source: display_name/source
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: corporate_body
+  overwrite_properties:
+    - name
+    - description
+    - field_cat_date_begin
+    - field_cat_date_end
+migration_dependencies: null

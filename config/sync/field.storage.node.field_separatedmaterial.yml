@@ -1,0 +1,21 @@
+uuid: 792608af-6911-4dcc-aba0-42b6fac86a50
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: qWbMY2jTj9TG0Rvj3ZkndoAaWaEavr2bAypthxSl-Jc
+id: node.field_separatedmaterial
+field_name: field_separatedmaterial
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

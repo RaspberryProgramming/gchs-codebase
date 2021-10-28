@@ -1,0 +1,32 @@
+uuid: 5c4c9619-ed9b-4cbf-8c57-ecb87392b08b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source
+    - node.type.archival_object
+    - node.type.archival_resource
+    - node.type.islandora_object
+_core:
+  default_config_hash: 1l-9SU05u4fuQR9Mvf3-Nl44FOIA8qhqwxKgXnIrJj8
+id: node.islandora_object.field_source
+field_name: field_source
+entity_type: node
+bundle: islandora_object
+label: Source
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      archival_object: archival_object
+      archival_resource: archival_resource
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: archival_object
+field_type: entity_reference

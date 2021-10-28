@@ -1,0 +1,23 @@
+uuid: 4f242d86-fba3-4889-8de1-d605e83cdf72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_userestrict
+    - node.type.archival_object
+  module:
+    - text
+_core:
+  default_config_hash: eBKSpCtuSBhNqcoS1m7cp4M4jouPXzdugnoXpXbYHp0
+id: node.archival_object.field_userestrict
+field_name: field_userestrict
+entity_type: node
+bundle: archival_object
+label: 'Conditions Governing Use'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

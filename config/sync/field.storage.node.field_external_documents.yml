@@ -1,0 +1,21 @@
+uuid: 6c9071d5-c6f8-41e0-805f-8bc854be06a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+_core:
+  default_config_hash: a4UZdmUApvvELZYc-U4JyXyykCZqpe50mYT68kUbS6A
+id: node.field_external_documents
+field_name: field_external_documents
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

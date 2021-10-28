@@ -1,0 +1,25 @@
+uuid: cff089fd-b87b-49e9-8873-fcfc937baf5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_restrictions_bool
+    - node.type.archival_resource
+_core:
+  default_config_hash: 0MFMhMfqQeHzvURRapj5bz7lvoje_1TcEUzuHYdE3Wo
+id: node.archival_resource.field_restrictions_bool
+field_name: field_restrictions_bool
+entity_type: node
+bundle: archival_resource
+label: 'Restrictions?'
+description: 'Indicates if the resource is restricted in any way.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Restrictions Apply'
+  off_label: 'No Restrictions'
+field_type: boolean

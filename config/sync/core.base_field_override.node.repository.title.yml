@@ -1,0 +1,20 @@
+uuid: 3fb6c163-1930-474d-bda8-3483e66a2603
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.repository
+_core:
+  default_config_hash: xvDLF6je3ZfYNkyMxlIDAOJOEmDEOOQ-anEm1OSLOS4
+id: node.repository.title
+field_name: title
+entity_type: node
+bundle: repository
+label: 'Repository Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,243 @@
+<?php
+
+/**
+ * @file
+ * ArchivesSpace install and update hooks.
+ */
+
+use Drupal\Core\Entity\EntityStorageException;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
+
+/**
+ * Add external_documents to migrations.
+ */
+function archivesspace_update_8003() {
+  try {
+    // Create the link field storage.
+    $external_doc_storage = \Drupal::entityManager()->getStorage('field_storage_config')->create([
+      'field_name' => 'field_external_documents',
+      'entity_type' => 'node',
+      'type' => 'link',
+      'cardinality' => -1,
+    ]);
+    $external_doc_storage->save();
+
+    $field_config_storage = \Drupal::entityManager()->getStorage('field_config');
+    $display_repo = \Drupal::service('entity_display.repository');
+    foreach (['archival_resource', 'archival_object'] as $bundle) {
+      // Add the new link fields.
+      $field_config_storage->create([
+        'field_name' => 'field_external_documents',
+        'field_storage' => $external_doc_storage,
+        'entity_type' => 'node',
+        'bundle' => $bundle,
+        'label' => 'External Documents',
+      ])->save();
+
+      // Add the new link fields to the default display modes.
+      $display_repo->getViewDisplay('node', $bundle, 'default')
+        ->setComponent('field_external_documents', [
+          'type' => 'link',
+        ])
+        ->save();
+    }
+  }
+  catch (EntityStorageException $e) {
+    \Drupal::messenger()->addWarning("Could not add field_external_documents storage: " . $e->getMessage() . "\n");
+  }
+
+  // Add the new link to the migration configurations.
+  // We need to find the appropriate migration ID because it is possible,
+  // although unlikely, that a site changed those settings.
+  $config_factory = \Drupal::configFactory();
+  $utils = \Drupal::service('archivesspace.utils');
+  foreach (['/repositories/2/resources/', '/repositories/2/archival_objects/'] as $uri) {
+    $migration_id = $utils->getUriMigration($uri);
+    $migration_config = $config_factory->getEditable('migrate_plus.migration.' . $migration_id);
+    $migration_config->set('process.field_external_documents', [
+        [
+          "plugin" => 'external_document_link',
+          "source" => 'external_documents',
+        ],
+    ])->save();
+  }
+}
+
+/**
+ * Make the title fields formatted text.
+ */
+function archivesspace_update_8002() {
+  $database = \Drupal::database();
+  $entityType = 'node';
+  $fieldName = 'field_as_title';
+  $table = $entityType . '__' . $fieldName;
+  $currentRows = NULL;
+  $newFieldsList = [];
+  $fieldStorage = FieldStorageConfig::loadByName($entityType, $fieldName);
+
+  if (is_null($fieldStorage)) {
+    return;
+  }
+
+  // Get all current data from DB.
+  if ($database->schema()->tableExists($table)) {
+    // The table data to restore after the update is completed.
+    $query = $database->select($table, 'n')->fields('n');
+    $query->addExpression(':val', $fieldName . '_format', [':val' => 'basic_html']);
+    $currentRows = $query->execute()
+      ->fetchAll();
+  }
+
+  // Use existing field config for new field.
+  $entity_display_repo = \Drupal::service('entity_display.repository');
+  $view_mode_components = [];
+  foreach ($fieldStorage->getBundles() as $bundle => $label) {
+    $field = FieldConfig::loadByName($entityType, $bundle, $fieldName);
+    $newField = $field->toArray();
+    $newField['label'] = $field->label();
+    $newField['field_type'] = 'text_long';
+    $newField['settings'] = [];
+    $newFieldsList[] = $newField;
+
+    // Store display mode configs with new types.
+    // Display modes first.
+    $view_modes = $entity_display_repo->getViewModeOptionsByBundle($entityType, $bundle);
+    $entity_display_store = \Drupal::service('entity_type.manager')->getStorage('entity_view_display');
+    foreach (array_keys($view_modes) as $view_mode) {
+      if ($component = $entity_display_store->load("$entityType.$bundle.$view_mode")->getComponent($fieldName)) {
+        $view_mode_components['entity_view_display'][$entityType . '.' . $bundle . '.' . $view_mode]['displayed'] = TRUE;
+        $view_mode_components['entity_view_display'][$entityType . '.' . $bundle . '.' . $view_mode]['component'] = $component;
+        $view_mode_components['entity_view_display'][$entityType . '.' . $bundle . '.' . $view_mode]['component']['type'] = 'text_default';
+      }
+      else {
+        $view_mode_components['entity_view_display'][$entityType . '.' . $bundle . '.' . $view_mode]['displayed'] = FALSE;
+      }
+    }
+    // Form modes next.
+    $view_modes = $entity_display_repo->getFormModeOptionsByBundle($entityType, $bundle);
+    $entity_display_store = \Drupal::service('entity_type.manager')->getStorage('entity_form_display');
+    foreach (array_keys($view_modes) as $view_mode) {
+      if ($component = $entity_display_store->load("$entityType.$bundle.$view_mode")->getComponent($fieldName)) {
+        $view_mode_components['entity_form_display'][$entityType . '.' . $bundle . '.' . $view_mode]['displayed'] = TRUE;
+        $view_mode_components['entity_form_display'][$entityType . '.' . $bundle . '.' . $view_mode]['component'] = $component;
+        $view_mode_components['entity_form_display'][$entityType . '.' . $bundle . '.' . $view_mode]['component']['type'] = 'text_textarea';
+      }
+      else {
+        $view_mode_components['entity_form_display'][$entityType . '.' . $bundle . '.' . $view_mode]['displayed'] = FALSE;
+      }
+    }
+  }
+
+  // Deleting field storage which will also delete bundles(fields).
+  $newFieldStorage = $fieldStorage->toArray();
+  $newFieldStorage['type'] = 'text_long';
+  $newFieldStorage['settings'] = [];
+
+  $fieldStorage->delete();
+
+  // Purge field data now to allow new field and field_storage with same name
+  // to be created.
+  field_purge_batch(40);
+
+  // Create new field storage.
+  $newFieldStorage = FieldStorageConfig::create($newFieldStorage);
+  $newFieldStorage->save();
+
+  // Create new fields.
+  foreach ($newFieldsList as $nfield) {
+    $nfieldConfig = FieldConfig::create($nfield);
+    $nfieldConfig->save();
+  }
+
+  // Restore existing data in new table.
+  if (!is_null($currentRows)) {
+    foreach ($currentRows as $row) {
+      $database->insert($table)
+        ->fields((array) $row)
+        ->execute();
+    }
+  }
+
+  // Restore display mode configurations.
+  foreach ($view_mode_components as $display_type => $display_modes) {
+    $entity_display_store = \Drupal::service('entity_type.manager')->getStorage($display_type);
+    foreach ($display_modes as $display_mode_id => $config) {
+      if ($config['displayed']) {
+        $entity_display_store->load($display_mode_id)
+          ->setComponent($fieldName, $config['component'])
+          ->save();
+      }
+      else {
+        $entity_display_store->load($display_mode_id)
+          ->removeComponent($fieldName)
+          ->save();
+      }
+    }
+  }
+
+  // Update migration configuration.
+  $config_factory = \Drupal::configFactory();
+  $migration_config = $config_factory->getEditable('migrate_plus.migration.as_archival_objects');
+  $migration_config->set('process.title', [
+      [
+        "plugin" => 'str_replace',
+        "source" => 'display_string',
+        "regex" => TRUE,
+        "search" => '#<(/)?emph#',
+        "replace" => '<\1em',
+      ],
+      [
+        "plugin" => "callback",
+        "callable" => "trim",
+      ],
+  ])
+    ->clear('process.field_as_title')
+    ->set('process.field_as_title/format', [
+      'plugin' => 'default_value',
+      'default_value' => 'basic_html',
+    ])
+    ->set('process.field_as_title/value', [
+         [
+           "plugin" => 'str_replace',
+           "source" => 'title',
+           "regex" => TRUE,
+           "search" => '#<(/)?emph#',
+           "replace" => '<\1em',
+         ],
+         [
+           "plugin" => "callback",
+           "callable" => "trim",
+         ],
+    ])
+    ->save();
+
+  $migration_config = $config_factory->getEditable('migrate_plus.migration.as_resources');
+  $migration_config->set('process.title', [
+        [
+          "plugin" => 'str_replace',
+          "source" => 'title',
+          "regex" => TRUE,
+          "search" => '#<(/)?emph#',
+          "replace" => '<\1em',
+        ],
+        [
+          "plugin" => "callback",
+          "callable" => "trim",
+        ],
+  ])->save();
+}
+
+/**
+ * Add the breadcrumbs configuration.
+ */
+function archivesspace_update_8001() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('archivesspace.settings');
+  $config->set('breadcrumb.content_types', [
+    'archival_object',
+    'archival_resource',
+  ]);
+  $config->set('breadcrumb.parent_field', 'field_as_parent');
+  $config->save(TRUE);
+}

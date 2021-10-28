@@ -1,0 +1,23 @@
+uuid: 4ed57182-78a0-4011-9ebd-b85aac14acac
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: Z7Vy3f0BVKQ_v-hCjTv-JvpD_bBPF_ahcozs_8hIks4
+id: node.field_resource_identifier
+field_name: field_resource_identifier
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

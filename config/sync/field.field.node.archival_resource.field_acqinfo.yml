@@ -1,0 +1,23 @@
+uuid: 0d56d789-1e13-453d-8e37-71f50615a69e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_acqinfo
+    - node.type.archival_resource
+  module:
+    - text
+_core:
+  default_config_hash: 69JaINWa4QSjRq30i_nUtj-1BdwPI3dSb37zXw8XhlY
+id: node.archival_resource.field_acqinfo
+field_name: field_acqinfo
+entity_type: node
+bundle: archival_resource
+label: 'Immediate Source of Acquisition'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

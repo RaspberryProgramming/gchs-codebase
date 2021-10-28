@@ -1,0 +1,29 @@
+uuid: 5dbd1636-2481-49c0-a3f8-a996bd4bae97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_temporal_subject
+    - node.type.islandora_object
+    - taxonomy.vocabulary.subject
+id: node.islandora_object.field_temporal_subject
+field_name: field_temporal_subject
+entity_type: node
+bundle: islandora_object
+label: 'Temporal Subject'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      subject: subject
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

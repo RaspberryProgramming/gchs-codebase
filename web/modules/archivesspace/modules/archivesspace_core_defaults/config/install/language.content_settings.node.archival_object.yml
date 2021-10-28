@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.archival_object
+id: node.archival_object
+target_entity_type_id: node
+target_bundle: archival_object
+default_langcode: site_default
+language_alterable: false

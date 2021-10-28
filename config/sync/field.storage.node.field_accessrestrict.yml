@@ -1,0 +1,21 @@
+uuid: e4c4532e-ee27-49e1-ba97-8dc2f2a16962
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: 3D3_7C1b9Wil24wKBbllYy-7PIgJXczWIZVD7fNiKNU
+id: node.field_accessrestrict
+field_name: field_accessrestrict
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

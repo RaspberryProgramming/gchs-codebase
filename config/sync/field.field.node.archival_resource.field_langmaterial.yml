@@ -1,0 +1,23 @@
+uuid: afb70ad6-ae3f-431c-b5b0-c171cb47e36c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_langmaterial
+    - node.type.archival_resource
+  module:
+    - text
+_core:
+  default_config_hash: SqjC7PBws7YdP3gtj6Rpf4cMKjdHkrISvk1BXs0R1Kw
+id: node.archival_resource.field_langmaterial
+field_name: field_langmaterial
+entity_type: node
+bundle: archival_resource
+label: 'Language of Materials'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,23 @@
+uuid: 6571f649-37a4-4a5f-bf1f-cf0380631794
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_appraisal
+    - node.type.archival_resource
+  module:
+    - text
+_core:
+  default_config_hash: At0MUE5hbUEGzcTSowBheK9rn6P6VF95Ql8Avn8NgkQ
+id: node.archival_resource.field_appraisal
+field_name: field_appraisal
+entity_type: node
+bundle: archival_resource
+label: Appraisal
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

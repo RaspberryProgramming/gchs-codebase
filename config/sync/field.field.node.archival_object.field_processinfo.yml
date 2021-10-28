@@ -1,0 +1,23 @@
+uuid: 8a10126c-f79f-4991-bc02-6f08f473a683
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_processinfo
+    - node.type.archival_object
+  module:
+    - text
+_core:
+  default_config_hash: nind_FzbS4oqeesmGp9D1TITUHGdx6RwSIEBbJ7L82g
+id: node.archival_object.field_processinfo
+field_name: field_processinfo
+entity_type: node
+bundle: archival_object
+label: 'Processing Information'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

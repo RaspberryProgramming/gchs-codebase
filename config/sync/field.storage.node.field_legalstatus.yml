@@ -1,0 +1,21 @@
+uuid: e16b043b-02b5-45f8-9547-9d08c96d71f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: fg-i21fX68D7IkZumqswfkskAe70pnq1jWkB8eUR9Iw
+id: node.field_legalstatus
+field_name: field_legalstatus
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

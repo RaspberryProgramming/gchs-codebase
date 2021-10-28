@@ -1,0 +1,23 @@
+uuid: fa231c82-f957-4c70-b5b8-718c66089bde
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_odd
+    - node.type.archival_resource
+  module:
+    - text
+_core:
+  default_config_hash: 5JCOkslXm5BUodTkN6HebvwHt8sndpUQbk197QuT1aY
+id: node.archival_resource.field_odd
+field_name: field_odd
+entity_type: node
+bundle: archival_resource
+label: General
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

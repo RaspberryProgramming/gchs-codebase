@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_user_mtime
+    - node.type.archival_object
+  module:
+    - datetime
+id: node.archival_object.field_user_mtime
+field_name: field_user_mtime
+entity_type: node
+bundle: archival_object
+label: 'User Modified Time'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

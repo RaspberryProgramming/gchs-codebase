@@ -1,0 +1,23 @@
+uuid: 3ba4fa57-9c1c-4e15-acac-e17ba0b30173
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_prefercite
+    - node.type.archival_resource
+  module:
+    - text
+_core:
+  default_config_hash: p9CjRJffBhBM2csj89EVSspj-bfj6NAxLYlGjbShK0w
+id: node.archival_resource.field_prefercite
+field_name: field_prefercite
+entity_type: node
+bundle: archival_resource
+label: 'Preferred Citation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

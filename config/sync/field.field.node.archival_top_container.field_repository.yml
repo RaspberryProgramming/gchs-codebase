@@ -1,0 +1,23 @@
+uuid: e78f7567-8894-4072-9cc2-f744b6936430
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_repository
+    - node.type.archival_top_container
+_core:
+  default_config_hash: KSKoeMswi4m4AOyJHTTJ8XMGCeZ3X-I80ODH5beFd5c
+id: node.archival_top_container.field_repository
+field_name: field_repository
+entity_type: node
+bundle: archival_top_container
+label: Repository
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings: {  }
+field_type: entity_reference

@@ -1,0 +1,20 @@
+uuid: 3432098e-4223-4e8e-9aaa-c8a06fedc72e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.archival_object
+_core:
+  default_config_hash: JOd9XZvKFVvEpuwBCflmbr8NRNwoR5X9mBYuvElk8kY
+id: node.archival_object.title
+field_name: title
+entity_type: node
+bundle: archival_object
+label: 'Display String'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

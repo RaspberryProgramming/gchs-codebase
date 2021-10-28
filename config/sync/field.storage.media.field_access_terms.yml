@@ -1,0 +1,26 @@
+uuid: 753d1afd-08c8-43f1-8019-217cb9d97646
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - media
+    - taxonomy
+third_party_settings:
+  field_permissions:
+    permission_type: private
+_core:
+  default_config_hash: wJ27ZPLCi9CKnGI4gwKjMBuAAtXPgxaJoiecuALirdY
+id: media.field_access_terms
+field_name: field_access_terms
+entity_type: media
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

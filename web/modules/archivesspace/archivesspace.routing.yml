@@ -1,0 +1,42 @@
+archivesspace.admin_config_archivesspace:
+  path: '/admin/archivesspace'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'ArchivesSpace'
+  requirements:
+    _permission: 'access administration pages'
+
+archivesspace.settings:
+  path: '/admin/archivesspace/config'
+  defaults:
+    _form: 'Drupal\archivesspace\Form\ASpaceSettingsForm'
+    _title: 'ArchivesSpace Settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+archivesspace.batch_update_form:
+  path: '/admin/archivesspace/batch-update'
+  arguments: ['@archivesspace.batch_update']
+  defaults:
+    _title: 'Batch Update ArchivesSpace'
+    _form: '\Drupal\archivesspace\Form\BatchUpdateForm'
+  requirements:
+    _permission: 'administer content'
+
+archivesspace.purger_form:
+  path: '/admin/archivesspace/purge-deleted'
+  arguments: ['@archivesspace.purger']
+  defaults:
+    _title: 'Purge Items Deleted from ArchivesSpace'
+    _form: '\Drupal\archivesspace\Form\PurgeDeletedForm'
+  requirements:
+    _permission: 'administer content'
+    
+archivesspace.resource_description_files:
+  path: '/admin/archivesspace/resource_description_files'
+  arguments: ['@archivesspace.resource_description_batch_worker']
+  defaults:
+    _controller: '\Drupal\archivesspace\Controller\ResourceDescriptionController::content'
+    _title: 'Resource Description Files'
+  requirements:
+    _permission: 'administer content'

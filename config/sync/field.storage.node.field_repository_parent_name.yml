@@ -1,0 +1,23 @@
+uuid: 31c486b3-6a23-4be1-9165-42a0a80f1496
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: RHDfsRuzwH87CMHjDLpjYKiO_FXRzmO0tNpQdusbd-c
+id: node.field_repository_parent_name
+field_name: field_repository_parent_name
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: e805c3e4-fbde-4ef6-8444-cd8e37f38ffc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_custodhist
+    - node.type.archival_resource
+  module:
+    - text
+_core:
+  default_config_hash: kW-Qj17fQJ8ryEeXZAM32HKPjjffUM7fVtjm1eDAXio
+id: node.archival_resource.field_custodhist
+field_name: field_custodhist
+entity_type: node
+bundle: archival_resource
+label: 'Custodial History'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

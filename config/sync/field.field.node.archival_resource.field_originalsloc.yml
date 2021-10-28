@@ -1,0 +1,23 @@
+uuid: 6a33d373-9b66-47e3-8e28-8c4be96f6b41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_originalsloc
+    - node.type.archival_resource
+  module:
+    - text
+_core:
+  default_config_hash: K46GI2ucGU8PZPdv_0SKuZ5ujbM0QwJQoZzXZhHZ1tE
+id: node.archival_resource.field_originalsloc
+field_name: field_originalsloc
+entity_type: node
+bundle: archival_resource
+label: 'Existence and Location of Originals'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

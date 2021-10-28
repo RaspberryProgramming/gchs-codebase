@@ -1,0 +1,34 @@
+uuid: 0d85035b-141d-4fe3-82d7-8313ccd62f27
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archival_container
+    - node.type.archival_object
+    - node.type.archival_top_container
+  module:
+    - archivesspace
+_core:
+  default_config_hash: xthruiPOnnyfg4fYRky6jK9YOeKb0kp3rIGnWk-dkSY
+id: node.archival_object.field_archival_container
+field_name: field_archival_container
+entity_type: node
+bundle: archival_object
+label: Container
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      archival_top_container: archival_top_container
+    sort:
+      field: field_as_title
+      direction: ASC
+    auto_create: 0
+    auto_create_bundle: ''
+  subcontainer_indicator: ''
+field_type: archival_physical_instance

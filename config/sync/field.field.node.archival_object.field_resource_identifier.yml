@@ -1,0 +1,21 @@
+uuid: 02e8bee7-c579-4673-b4c6-9a79939dafbd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource_identifier
+    - node.type.archival_object
+_core:
+  default_config_hash: ShXsuD1aG_H9bZmfeKvRwoP2frfLY58mXrNUYOiI-MA
+id: node.archival_object.field_resource_identifier
+field_name: field_resource_identifier
+entity_type: node
+bundle: archival_object
+label: 'Component Identifier'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

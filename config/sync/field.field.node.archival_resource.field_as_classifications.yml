@@ -1,0 +1,31 @@
+uuid: 22f6f274-a98b-4758-83ce-b4701d912815
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_as_classifications
+    - node.type.archival_resource
+    - taxonomy.vocabulary.records_classifications
+_core:
+  default_config_hash: 1MY0IhN3ukzaQOq29C7z07T5uObeWIshglZtBRSDOTY
+id: node.archival_resource.field_as_classifications
+field_name: field_as_classifications
+entity_type: node
+bundle: archival_resource
+label: Classifications
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      records_classifications: records_classifications
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

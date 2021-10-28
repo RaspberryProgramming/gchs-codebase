@@ -1,0 +1,12 @@
+uuid: 401f19a2-0f0d-45d0-b462-0b939c67267f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Yl6k-Kaps-mm9XlOFWxSOtTuh_dXGV_N49c0ExVEVXw
+id: archivesspace_agents
+label: archivesspace_agents
+description: ''
+source_type: null
+module: null
+shared_configuration: null

@@ -1,0 +1,21 @@
+uuid: 379a603b-358e-4a09-afa7-74f5685a0be5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: xAnNS81fyPQjpjnPdgCGnteWF_Wn2ZC-lOP8AI1YSi4
+id: node.field_fileplan
+field_name: field_fileplan
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

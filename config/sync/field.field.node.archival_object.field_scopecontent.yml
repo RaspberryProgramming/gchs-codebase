@@ -1,0 +1,23 @@
+uuid: 597d3c87-2c9c-48b2-a41c-d736de4652db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scopecontent
+    - node.type.archival_object
+  module:
+    - text
+_core:
+  default_config_hash: zzUYXlr4n2I3r0yyE0dUNy9Bg7jNGsCTdXBh7qU-NOY
+id: node.archival_object.field_scopecontent
+field_name: field_scopecontent
+entity_type: node
+bundle: archival_object
+label: 'Scope and Contents'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,23 @@
+uuid: 7c9c226f-41ac-4062-878e-0b1b5160aa37
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_materialspec
+    - node.type.archival_resource
+  module:
+    - text
+_core:
+  default_config_hash: aqUjlRqk5QEtbltuCyz7o7N5iCrpc4rQ61WKd_oEDOg
+id: node.archival_resource.field_materialspec
+field_name: field_materialspec
+entity_type: node
+bundle: archival_resource
+label: 'Materials Specific Details'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

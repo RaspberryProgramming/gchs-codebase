@@ -1,0 +1,25 @@
+uuid: 4ca2f83a-a04d-48b1-85a9-8c8b30e30590
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_external_documents
+    - node.type.archival_object
+  module:
+    - link
+_core:
+  default_config_hash: '-NKPchx6qUcxKId7CROuzt9ldNFlhbTqahJvWOdBqvM'
+id: node.archival_object.field_external_documents
+field_name: field_external_documents
+entity_type: node
+bundle: archival_object
+label: 'External Documents'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

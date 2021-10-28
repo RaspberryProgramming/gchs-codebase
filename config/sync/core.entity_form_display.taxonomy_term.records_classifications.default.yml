@@ -1,0 +1,73 @@
+uuid: 760e4314-4141-448a-826a-cb69181b3283
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.records_classifications.field_creator
+    - field.field.taxonomy_term.records_classifications.field_identifier
+    - taxonomy.vocabulary.records_classifications
+  module:
+    - path
+    - text
+_core:
+  default_config_hash: HUvxjlGW8mEBgdbeFaowbz-8qNRD_b16oreNN-53_Jc
+id: taxonomy_term.records_classifications.default
+targetEntityType: taxonomy_term
+bundle: records_classifications
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_creator:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_identifier:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 4
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+hidden: {  }

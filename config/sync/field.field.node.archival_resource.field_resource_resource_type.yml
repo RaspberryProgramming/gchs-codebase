@@ -1,0 +1,23 @@
+uuid: 295978b1-99e7-494d-9aba-69ead950c513
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource_resource_type
+    - node.type.archival_resource
+  module:
+    - options
+_core:
+  default_config_hash: UgpTQhx0aVtvHfpyDEE6b97WILtgmqKbY6JdK2UcnFA
+id: node.archival_resource.field_resource_resource_type
+field_name: field_resource_resource_type
+entity_type: node
+bundle: archival_resource
+label: 'Resource Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

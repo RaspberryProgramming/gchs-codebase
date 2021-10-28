@@ -1,0 +1,10 @@
+uuid: f9e3792e-1993-4df5-af88-5aa4aa58dd9f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: mhs5RRRKGjb0iheP4BY0pxOJr9IEx3RvguaDF2QqCCk
+name: 'Records Classifications'
+vid: records_classifications
+description: ''
+weight: 0

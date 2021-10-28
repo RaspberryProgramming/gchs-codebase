@@ -1,0 +1,25 @@
+archivesspace.admin_config_archivesspace:
+  title: ArchivesSpace
+  parent: system.admin_config
+  route_name: archivesspace.admin_config_archivesspace
+  weight: 100
+
+archivesspace.archivesspace_settings:
+  title: 'Core Settings'
+  parent: archivesspace.admin_config_archivesspace
+  route_name: archivesspace.settings
+
+archivesspace.batch_update_form:
+  title: 'Batch Update'
+  parent: archivesspace.admin_config_archivesspace
+  route_name: archivesspace.batch_update_form
+
+archivesspace.purger_form:
+  title: 'Purge Deleted'
+  parent: archivesspace.admin_config_archivesspace
+  route_name: archivesspace.purger_form
+
+archivesspace.resource_description_files:
+  title: 'Update Resource Description Files'
+  parent: archivesspace.admin_config_archivesspace
+  route_name: archivesspace.resource_description_files

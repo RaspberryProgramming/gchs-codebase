@@ -1,0 +1,23 @@
+name: ArchivesSpace
+type: module
+description: 'Provides integration between Drupal and ArchivesSpace.'
+core_version_requirement: ^8.8 || ^9
+package: ArchivesSpace
+dependencies:
+  - drupal:field
+  - drupal:language
+  - drupal:link
+  - drupal:media
+  - drupal:menu_ui
+  - drupal:node
+  - drupal:options
+  - drupal:path
+  - drupal:taxonomy
+  - drupal:text
+  - drupal:user
+  - drupal:views
+
+# Information added by Drupal.org packaging script on 2021-09-16
+version: '8.x-1.2'
+project: 'archivesspace'
+datestamp: 1631823635

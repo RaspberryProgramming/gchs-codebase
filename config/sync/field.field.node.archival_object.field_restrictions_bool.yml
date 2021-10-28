@@ -1,0 +1,25 @@
+uuid: f03dab51-8fa1-4c76-9654-6c521633ccc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_restrictions_bool
+    - node.type.archival_object
+_core:
+  default_config_hash: 2L2NOuEPrPmFn6kmBzeWW_z3szS6pO9XlbhbrhUXuAc
+id: node.archival_object.field_restrictions_bool
+field_name: field_restrictions_bool
+entity_type: node
+bundle: archival_object
+label: 'Restrictions?'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

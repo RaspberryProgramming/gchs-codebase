@@ -1,0 +1,36 @@
+uuid: b39740c8-0a70-499a-86f9-5afc890bfde8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.family
+  module:
+    - taxonomy
+_core:
+  default_config_hash: rCeNVy4F2ihHcsUfcf4zz-kvOJ4Sp60Ygrghs1ebILY
+id: taxonomy_term.family
+targetEntityType: taxonomy_term
+bundle: family
+types:
+  - 'schema:Organization'
+fieldMappings:
+  name:
+    properties:
+      - 'schema:name'
+  description:
+    properties:
+      - 'schema:description'
+  field_authority_link:
+    properties:
+      - 'schema:sameAs'
+  field_cat_date_end:
+    properties:
+      - 'schema:dissolutionDate'
+  field_cat_date_begin:
+    properties:
+      - 'schema:foundingDate'
+  changed:
+    properties:
+      - 'schema:dateModified'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
